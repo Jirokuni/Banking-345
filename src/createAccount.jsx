@@ -27,6 +27,11 @@ export const CreateAccountForm = (props) => {
             return;
         }
 
+        if (initialBalance < 0) {
+            alert("Initial balance cannot be less than 0");
+            return;
+        }
+
         const uniqueId = crypto.randomUUID();
         console.log(`Account created for ${userName} ${firstName} ${lastName} with email ${email}, password ${password}, and initial balance ${initialBalance}`);
         const accountData = {
@@ -78,6 +83,7 @@ export const CreateAccountForm = (props) => {
                     <input className="input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="*******" id="password" required/>
                     <label className="label" htmlFor="initialBalance">Initial Balance</label>
                     <input className="input" type="number" value={initialBalance} onChange={(e) => setInitialBalance(e.target.value)} placeholder="0.00 PHP" id="initialBalance" required/>
+                    {initialBalance < 0 && <p className="error">Initial balance cannot be less than 0</p>}
                     <button className="button" type="submit">Create Account</button>
                 </form>
             </div>
@@ -111,7 +117,3 @@ export const CreateAccountForm = (props) => {
 }
 
 export default CreateAccountForm;
-
-
-
-
