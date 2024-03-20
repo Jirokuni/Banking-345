@@ -5,7 +5,7 @@ function Unique() {
     <>
         <div>Unique</div>
         <ul>
-            <li>displays all split fund requests<button>Approve</button></li>
+            <li>displays all split fund requests <button>Approve</button></li>
         </ul>
     </>
 
