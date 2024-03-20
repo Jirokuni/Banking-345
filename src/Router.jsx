@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './home';
 import About from './about';
 import Contact from './contact';
-import BudgetApp from './AddTransaction';
 
 
 const App = () => {
@@ -18,8 +17,6 @@ const App = () => {
           <li><a href="/contact">Contact</a></li>
         </ul>
       </nav>
-
-      <BudgetApp/>
       
         <Routes>
           <Route path="/" element={<Home />} />
