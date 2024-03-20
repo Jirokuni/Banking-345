@@ -1,10 +1,10 @@
 // App.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Add Link import
-import Home from './home';
-import About from './about';
-import Contact from './contact';
-import BudgetApp from './AddTransaction';
+// import Home from 'src/home.jsx'
+// import About from './about';
+// import Contact from './contact';
+// import BudgetApp from './AddTransaction';
 
 
 const App = () => {
@@ -19,7 +19,7 @@ const App = () => {
         </ul>
       </nav>
 
-      <BudgetApp/>
+      {/* <BudgetApp/> */}
       
         <Routes>
           <Route path="/" element={<Home />} />

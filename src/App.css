@@ -1,0 +1,17 @@
+body, #root {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 100dvw;
+    height: 100dvh;
+    border: 1px solid green;
+}
+
+#sidebar {
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+ width: 25%;
+ border: 1px solid green;
+}
