@@ -1,15 +1,28 @@
 * {
-  margin: 0;
   padding: 0;
   margin: 0;
 }
 
+li {
+  list-style: none;
+}
+
 .navbar {
-  background-color: #333;
+  background-color: #ececec;
+  height: 2rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .navbar ul {
+  display: flex;
+  width: fit-content;
+  gap: 1rem;
+  justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -68,16 +81,20 @@ th {
   background-color: #f2f2f2;
 }
 
+
 .dash-box {
-  padding-top: 3rem;
-  padding-left: 10rem;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .promo-boxes {
   display: flex;
   gap: 1rem;
-  width: 90rem;
-  border: solid red;
+  width: 100%;
+  height: 100%;
   flex-wrap: wrap; /* Allow boxes to wrap to the next line */
 }
 
@@ -121,4 +138,17 @@ th {
 #box:hover {
   transform: scale(1.1);
   transition: ease-in 0.1s;
+}
+
+.cashback-box, .rebate-box, .interest-box {
+  width: 30%;
+  height: 40%;
+}
+
+#landing-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }

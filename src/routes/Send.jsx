@@ -93,4 +93,4 @@ function Send() {
   );
 }
 
-export default Send;
+export default Send
