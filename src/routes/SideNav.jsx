@@ -29,6 +29,9 @@ export default function SideNav() {
             <li>
               <Link to={`/app/create-user`}>Create User</Link>
             </li>
+            <li>
+              <Link to={`/app/budget`}>Budget</Link>
+            </li>
           </ul>
         </nav>
       </div>

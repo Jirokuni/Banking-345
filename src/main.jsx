@@ -17,6 +17,7 @@ import Home from './home.jsx';
 import CreateAccountForm from './routes/createAccount.jsx';
 import { LogIn } from './routes/LogIn.jsx';
 import ProtectedRoute from './routes/Authenticator.jsx';
+import BudgetForm from './routes/BudgetApp/BudgetForm.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
       {
         path: "/app/create-user",
         element: <CreateAccountForm />,
+      },
+      {
+        path: "/app/budget",
+        element: <BudgetForm />,
       }
     ]
   },
