@@ -14,7 +14,9 @@ import ErrorPage from './ErrorPage.jsx';
 import Dashboard from './routes/Dashboard.jsx';
 import Unique from './routes/Unique.jsx';
 import Home from './home.jsx';
-import LogIn from './routes/LogIn.jsx';
+import CreateAccountForm from './routes/createAccount.jsx';
+import { LogIn } from './routes/LogIn.jsx';
+import ProtectedRoute from './routes/Authenticator.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,28 +29,35 @@ const router = createBrowserRouter([
     element: <LogIn />,
   },
   {
-    path: "/user",
-    element: <SideNav />,
+    path: "/app",
+    element: 
+    <ProtectedRoute >
+      <SideNav />
+    </ProtectedRoute>,
     children: [
       {
-        path: "/user/send",
+        path: "/app/send",
         element: <Send />,
       },
       {
-        path: "/user/withdraw",
+        path: "/app/withdraw",
         element: <Withdraw />,
       },
       {
-        path: "/user/deposit",
+        path: "/app/deposit",
         element: <Deposit />,
       },
       {
-        path: "/user/dashboard",
+        path: "/app/dashboard",
         element: <Dashboard />,
       },
       {
-        path: "/user/unique",
+        path: "/app/unique",
         element: <Unique />,
+      },
+      {
+        path: "/app/create-user",
+        element: <CreateAccountForm />,
       }
     ]
   },

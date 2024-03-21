@@ -1,32 +1,33 @@
 import { Outlet, Link } from "react-router-dom";
 import App from "../Router";
+import NavBar from "./NavBar";
 
 export default function SideNav() {
   return (
     <>
-      <App />
+    <NavBar />
       <div className="dash-container">
       <div id="sidebar">
         <h1>Manage Users</h1>
         <nav>
           <ul>
             <li>
-              <Link to={`/user/dashboard`}>Dashboard</Link>
+              <Link to={`/app/dashboard`}>Dashboard</Link>
             </li>
             <li>
-              <Link to={`/user/send`}>Send</Link>
+              <Link to={`/app/send`}>Send</Link>
             </li>
             <li>
-              <Link to={`/user/withdraw`}>Withdraw</Link>
+              <Link to={`/app/withdraw`}>Withdraw or Deposit</Link>
             </li>
             <li>
-              <Link to={`/user/deposit`}>Deposit</Link>
+              <Link to={`/app/deposit`}>Deposit</Link>
             </li>
             <li>
-              <Link to={`/user/unique`}>Feature</Link>
+              <Link to={`/app/unique`}>Feature</Link>
             </li>
             <li>
-              <Link to={`/user/create-user`}>Create User</Link>
+              <Link to={`/app/create-user`}>Create User</Link>
             </li>
           </ul>
         </nav>

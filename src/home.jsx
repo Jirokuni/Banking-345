@@ -1,11 +1,12 @@
 import React from "react";
 import App from "./Router";
+import NavBar from "./routes/NavBar";
 
 const Home = () => {
   return (
     <>
     <div id="landing-page">
-    <App />
+      <NavBar />
       <div className="dash-box">
         <div className="promo-boxes">
           <div id="box" className="interest-box">

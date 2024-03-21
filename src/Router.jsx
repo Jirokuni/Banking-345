@@ -6,8 +6,8 @@ import React, { useState } from "react"
 import Home from './home';
 // import About from './about';
 // import Contact from './contact';
-import { Login } from "./login";
-import { CreateAccountForm } from "./createAccount"
+import { LogIn } from "./routes/LogIn.jsx";
+// import { CreateAccountForm } from "./routes/createAccount"
 
 
 
@@ -37,12 +37,10 @@ function App() {
     // </Router>
     <div className="App">
       {
-        currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <CreateAccountForm onFormSwitch={toggleForm}/>
+        currentForm === "login" ? <LogIn onFormSwitch={toggleForm}/> : <CreateAccountForm onFormSwitch={toggleForm}/>
       }
     </div>
   );
 }
-
-
 
 export default App;
