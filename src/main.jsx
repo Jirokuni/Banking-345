@@ -17,7 +17,10 @@ import Home from './home.jsx';
 import CreateAccountForm from './routes/createAccount.jsx';
 import { LogIn } from './routes/LogIn.jsx';
 import ProtectedRoute from './routes/Authenticator.jsx';
-import BudgetForm from './routes/BudgetApp/BudgetForm.jsx';
+import BudgetForm, { budgetLoader } from './routes/BudgetApp/BudgetForm.jsx';
+import BudgetBreakdown from './routes/BudgetApp/BudgetBreakdown.jsx';
+import RecentFunds from './routes/BudgetApp/RecentFunds.jsx';
+import FutureFunds from './routes/BudgetApp/FutureFunds.jsx';
 
 const router = createBrowserRouter([
   {
@@ -63,6 +66,21 @@ const router = createBrowserRouter([
       {
         path: "/app/budget",
         element: <BudgetForm />,
+        loader: budgetLoader,
+        children: [
+          {
+            path: "/app/budget/breakdown",
+            element: <BudgetBreakdown />
+          },
+          {
+            path: "/app/budget/recent",
+            element: <RecentFunds />
+          },
+          {
+            path: "/app/budget/future",
+            element: <FutureFunds />
+          }
+        ]
       }
     ]
   },
