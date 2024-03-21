@@ -1,22 +1,20 @@
 import React, { useState } from "react"
-// import { useNavigate } from "react-router-dom"; // Added import for useNavigate
 
 export const Login = (props) => {
     const [email,setEmail] = useState('')
     const [pass,setPass] = useState('')
-    // const history = useNavigate(); // Initialized useNavigate
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const allAccounts = JSON.parse(localStorage.getItem('allAccounts')) || [];
         const foundAccount = allAccounts.find(account => account.email === email && account.password === pass);
-        if (foundAccount) {
-            console.log("Login successful");
+        const defaultLogin = JSON.parse(localStorage.getItem('defaultLogin'));
+        if (foundAccount || (email === defaultLogin.email && pass === defaultLogin.password)) {
+            alert("Login successful");
             // Perform actions after successful login
-            history.push('/main'); // Redirect to main.jsx after successful login
+            // history.push('/main'); // Redirect to main.jsx after successful login
         } else {
-            console.log("Invalid email or password");
-            // Handle invalid login
+            alert("Invalid email or password");
         }
     }   
 
