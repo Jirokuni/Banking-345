@@ -31,3 +31,75 @@ body, #root {
     padding: 1rem;
 }
 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    text-align: center;
+  }
+
+/* #createAccount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;;
+} */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.createAccountForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 50px; /* Added padding for spacing inside the border */
+    width: auto; /* Added width to fit content inside the border */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.label  {
+    color: #0d767d;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.input {
+    border-radius: 5px;
+    height: 2rem;
+    width: 20rem;
+    text-align: center;
+}
+
+.latestHistory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    width: auto;
+    margin: 0 auto;
+}
+.accountCreated {   
+    display:list-item;
+    justify-content: center;
+    align-items: center;
+}
+
