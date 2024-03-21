@@ -9,27 +9,14 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const App = () => {
   return (
-    <Router>
-      <div>
       <nav className="navbar">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <Link to="/" >Home</Link>
+          <Link to="/about" >About</Link>
+          <Link to="/contact" >Contact</Link>
+          <Link to="/log-in" >Log-in</Link>
         </ul>
       </nav>
-
-      {/* <BudgetApp/> */}
-      
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
-
-
   );
 };
 

@@ -13,31 +13,41 @@ import Deposit from './routes/Deposit.jsx';
 import ErrorPage from './ErrorPage.jsx';
 import Dashboard from './routes/Dashboard.jsx';
 import Unique from './routes/Unique.jsx';
+import Home from './home.jsx';
+import LogIn from './routes/LogIn.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <SideNav />,
+    element: <Home />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/log-in",
+    element: <LogIn />,
+  },
+  {
+    path: "/user",
+    element: <SideNav />,
     children: [
       {
-        path: "send",
+        path: "/user/send",
         element: <Send />,
       },
       {
-        path: "withdraw",
+        path: "/user/withdraw",
         element: <Withdraw />,
       },
       {
-        path: "deposit",
+        path: "/user/deposit",
         element: <Deposit />,
       },
       {
-        path: "dashboard",
+        path: "/user/dashboard",
         element: <Dashboard />,
       },
       {
-        path: "unique",
+        path: "/user/unique",
         element: <Unique />,
       }
     ]
