@@ -34,3 +34,12 @@
     display: flex;
     justify-content: space-between;
 }
+
+.budget-item {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid blue;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 0.5rem;
+}

@@ -67,20 +67,6 @@ const router = createBrowserRouter([
         path: "/app/budget",
         element: <BudgetForm />,
         loader: budgetLoader,
-        children: [
-          {
-            path: "/app/budget/breakdown",
-            element: <BudgetBreakdown />
-          },
-          {
-            path: "/app/budget/recent",
-            element: <RecentFunds />
-          },
-          {
-            path: "/app/budget/future",
-            element: <FutureFunds />
-          }
-        ]
       }
     ]
   },
