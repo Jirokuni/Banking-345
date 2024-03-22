@@ -1,0 +1,36 @@
+.budget-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 2rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.user-heading, .user-budget {
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.budget-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.budget-outlet {
+    flex-grow: 99;
+    width: 100%;
+    padding: 1rem 2rem;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.budget-links {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
