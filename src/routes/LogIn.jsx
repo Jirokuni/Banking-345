@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { toast } from 'react-toastify'; // Added import for toast
 // import { useNavigate } from "react-router-dom"; // Added import for useNavigate
 export const Login = (props) => {
     const [email,setEmail] = useState('')
@@ -10,12 +11,10 @@ export const Login = (props) => {
         const allAccounts = JSON.parse(localStorage.getItem('allAccounts')) || [];
         const foundAccount = allAccounts.find(account => account.email === email && account.password === pass);
         if (foundAccount) {
-            console.log("Login successful");
-            // Perform actions after successful login
-            history.push('/main'); // Redirect to main.jsx after successful login
+            toast.success("Login successful"); 
+
         } else {
-            console.log("Invalid email or password");
-            // Handle invalid login
+            toast.error("Invalid email or password");
         }
     }   
 
