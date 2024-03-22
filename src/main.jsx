@@ -14,14 +14,14 @@ import ErrorPage from './ErrorPage.jsx';
 import Dashboard from './routes/Dashboard.jsx';
 import Unique from './routes/Unique.jsx';
 import Home from './home.jsx';
-import CreateAccountForm from './routes/createAccount.jsx';
+import CreateAccountForm from './routes/CreateAccount.jsx';
 import { Login } from './login.jsx';
 import ProtectedRoute from './routes/Authenticator.jsx';
 import BudgetForm, { budgetLoader } from './routes/BudgetApp/BudgetForm.jsx';
 import BudgetBreakdown from './routes/BudgetApp/BudgetBreakdown.jsx';
 import RecentFunds from './routes/BudgetApp/RecentFunds.jsx';
 import FutureFunds from './routes/BudgetApp/DisplayAccounts.jsx';
-import Account from './Depwi.jsx';
+import DepositWithdraw from './Depwi.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/app/withdraw-deposit",
-        element: <Account />,
+        element: <DepositWithdraw/>,
       },
       {
         path: "/app/deposit",
