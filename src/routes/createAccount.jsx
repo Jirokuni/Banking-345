@@ -78,18 +78,18 @@ export const CreateAccountForm = (props) => {
         console.log(account);
     }
 
-    const saveDefaultLogin = () => {
-        const defaultLogin = {
-            id: 'admin',
-            userName: 'admin',
-            firstName: 'Admin',
-            lastName: 'User',
-            email: 'admin@example.com',
-            password: 'admin123',
-            balance: 1000
-        };
-        localStorage.setItem('defaultLogin', JSON.stringify(defaultLogin));
-    }
+    // const saveDefaultLogin = () => {
+    //     const defaultLogin = {
+    //         id: 'admin',
+    //         userName: 'admin',
+    //         firstName: 'Admin',
+    //         lastName: 'User',
+    //         email: 'admin@example.com',
+    //         password: 'admin123',
+    //         balance: 1000
+    //     };
+    //     localStorage.setItem('defaultLogin', JSON.stringify(defaultLogin));
+    // }
 
     return (
         <div>

@@ -20,19 +20,17 @@ function Dashboard() {
       denyButtonText: `No`
     }).then((result) => {
       if (result.isConfirmed) {
-        const updatedAccounts = allAccounts.filter(account => account.email !== accountToDelete);
+        const updatedAccounts = allAccounts.filter(account => account.email !== email);
         const updatedAccountsString = JSON.stringify(updatedAccounts);
         localStorage.setItem('allAccounts', updatedAccountsString);
         setAllAccounts(updatedAccounts);
-        setAccountToDelete(null);
+        setCreatedAccount(null);
         Swal.fire("Saved!", "", "success");
-        localStorage.removeItem('defaultLogin');
       } else if (result.isDenied) {
         Swal.fire("Changes are not saved", "", "info");
       }
     });
   }
-
 
   return (
     <>
@@ -65,6 +63,5 @@ function Dashboard() {
         </table>
     </>
     )}
-
 
 export default Dashboard
