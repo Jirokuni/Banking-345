@@ -1,8 +1,9 @@
 import React from 'react'
+import Account from '../Depwi.jsx'
 
 const Deposit = () => {
   return (
-    <div>Deposit function here</div>
+    <Account/>
   )
 }
 
