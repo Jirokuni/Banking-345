@@ -15,12 +15,13 @@ import Dashboard from './routes/Dashboard.jsx';
 import Unique from './routes/Unique.jsx';
 import Home from './home.jsx';
 import CreateAccountForm from './routes/createAccount.jsx';
-import { LogIn } from './routes/LogIn.jsx';
+import { Login } from './login.jsx';
 import ProtectedRoute from './routes/Authenticator.jsx';
 import BudgetForm, { budgetLoader } from './routes/BudgetApp/BudgetForm.jsx';
 import BudgetBreakdown from './routes/BudgetApp/BudgetBreakdown.jsx';
 import RecentFunds from './routes/BudgetApp/RecentFunds.jsx';
-import FutureFunds from './routes/BudgetApp/FutureFunds.jsx';
+import FutureFunds from './routes/BudgetApp/DisplayAccounts.jsx';
+import Account from './Depwi.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,22 +31,22 @@ const router = createBrowserRouter([
   },
   {
     path: "/log-in",
-    element: <LogIn />,
+    element: <Login />,
   },
   {
     path: "/app",
     element: 
-    <ProtectedRoute >
-      <SideNav />
-    </ProtectedRoute>,
+    // <ProtectedRoute >
+      <SideNav />,
+    /* </ProtectedRoute>, */
     children: [
       {
         path: "/app/send",
         element: <Send />,
       },
       {
-        path: "/app/withdraw",
-        element: <Withdraw />,
+        path: "/app/withdraw-deposit",
+        element: <Account />,
       },
       {
         path: "/app/deposit",
@@ -67,20 +68,6 @@ const router = createBrowserRouter([
         path: "/app/budget",
         element: <BudgetForm />,
         loader: budgetLoader,
-        children: [
-          {
-            path: "/app/budget/breakdown",
-            element: <BudgetBreakdown />
-          },
-          {
-            path: "/app/budget/recent",
-            element: <RecentFunds />
-          },
-          {
-            path: "/app/budget/future",
-            element: <FutureFunds />
-          }
-        ]
       }
     ]
   },
