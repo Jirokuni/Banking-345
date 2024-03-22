@@ -22,6 +22,8 @@ import BudgetBreakdown from './routes/BudgetApp/BudgetBreakdown.jsx';
 import RecentFunds from './routes/BudgetApp/RecentFunds.jsx';
 import FutureFunds from './routes/BudgetApp/DisplayAccounts.jsx';
 import DepositWithdraw from './Depwi.jsx';
+import FAQ from './routes/FAQ.jsx';
+
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: "/log-in",
     element: <Login />,
+  },
+  {
+    path: "/FAQs",
+    element: <FAQ />
   },
   {
     path: "/app",

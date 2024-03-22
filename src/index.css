@@ -65,7 +65,14 @@ a:visited {
   color: white;
 }
 
-.navbar .logo {
+.navbar a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar a .logo {
   height: 70%;
   margin-left: 1rem;
 }

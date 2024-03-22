@@ -1,0 +1,22 @@
+
+.error-heading {
+    font-size: 8rem;
+    padding-top: 1rem;
+    color: #529c2f;
+}
+
+.error-subheading {
+    padding-top: 1rem;
+}
+
+i {
+    text-decoration: underline;
+}
+
+#error-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

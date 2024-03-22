@@ -25,6 +25,7 @@ function Send() {
 
 
   const confirmSend = () => {
+  
     const userSend = retrievedUsers.find(
       (user) => String(user.id) === String(sendID.trim())
     );
@@ -32,10 +33,21 @@ function Send() {
       (user) => String(user.id) === String(receiveID.trim())
     );
 
+    if (Number(balanceInput) <= 0) {
+      alert("Balance input must be greater than 0");
+      return;
+    }
+
+      if (Number(userSend.balance) < Number(balanceInput)) {
+        alert("Insufficient balance for the transaction");
+        return;
+    }
+
     if (userSend && userReceive) {
+
       const updatedUsers = retrievedUsers.map((user) => {
         if (String(user.id) === String(sendID).trim()) {
-          return { ...user, balance: Number(user.balance) - Number(balanceInput) };
+            return { ...user, balance: Number(user.balance) - Number(balanceInput) };
         } else if (String(user.id) === String(receiveID).trim()) {
           return { ...user, balance: Number(user.balance) + Number(balanceInput) };
         } else {
