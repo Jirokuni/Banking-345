@@ -1,6 +1,7 @@
 import { Link, useRouteError } from "react-router-dom";
 import "./error.css";
 
+
 export default function ErrorPage() {
   const error = useRouteError();
   console.error(error);
@@ -16,8 +17,8 @@ export default function ErrorPage() {
         </p>
       </div>
 
-      <div>
-        <Link to="/">Return to Home Page</Link>
+      <div className="return-btn">
+        <Link to="/"><p>Return to Home Page</p></Link>
       </div>
     </div>
   );
