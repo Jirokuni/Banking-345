@@ -123,7 +123,7 @@ function DepositWithdraw() {
             </div>
           </div>
         </div>
-        <div>
+        <div className="table-log">
           <h3>Actions Log:</h3>
           <table>
             <thead>

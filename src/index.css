@@ -8,8 +8,13 @@ li {
   list-style: none;
 }
 
+body {
+  background-image: url('https://media.istockphoto.com/id/1368169112/vector/money-green-seamless-pattern-vector-background-included-line-icons-as-piggy-bank-wallet.jpg?s=612x612&w=0&k=20&c=qjIUpnUPtiKGBgLnXGLQ_4qQUq36OvP82DIFTAdch70=');
+  overflow-x: hidden;
+}
+
 .navbar {
-  background-color: #529c2f;
+  background-color: #1f440d;
   height: 3rem;
   width: 100%;
   padding: 0;
@@ -33,8 +38,31 @@ li {
   
 }
 
-.navbar li {
-  float: left;
+#sidebar h1 {
+  border: solid green;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.829);
+}
+
+#sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  background-color: #000000;
+  height: 33rem;
+  border: solid green;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+#sidebar ul li {
+  color: white;
+}
+
+a:visited {
+  color: white;
 }
 
 .navbar .logo {
@@ -93,7 +121,9 @@ th {
 
 
 .dash-box {
-  width: 100vw;
+  width: 100%;
+  padding: 1rem;
+  padding-left: 1.8rem;
   height: 100%;
   display: flex;
   align-items: center;
@@ -102,66 +132,95 @@ th {
 
 .promo-boxes {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   width: 100%;
   height: 100%;
   flex-wrap: wrap; /* Allow boxes to wrap to the next line */
 }
 
+
 .interest-box {
-  background-image: url("https://public.bnbstatic.com/static/academy/uploads-original/46a184309e364b479e884344ceced661.png");
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid;
-  width: 30rem;
-  height: 20rem;
+  background-image: url("https://c8.alamy.com/comp/T4XEN3/interest-rate-comic-bubble-text-pop-art-style-radial-lines-background-explosion-vector-illustration-halftone-effect-T4XEN3.jpg");
+}
+
+.interest-box::before,
+.rebate-box::before,
+.cashback-box::before,
+.security-box::before,
+.tips-box::before,
+.customer-support::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.473) 100%, rgba(0,0,0,0.8) 100%);
+  z-index: 0;
 }
 
 .rebate-box {
-  background-image: url("https://i.pinimg.com/originals/8c/51/7e/8c517e9f374301dac541dff78bce1188.jpg");
+  background-image: url("https://i.pinimg.com/564x/e7/e7/6b/e7e76b1f7cf2855ff73c2b0f285432d3.jpg");
+}
+
+.cashback-box {
+  background-image: url('https://c8.alamy.com/comp/2F01CP7/comic-cloud-and-cash-back-money-rebate-or-payments-return-isolated-halftone-emblem-in-pop-art-style-vector-cash-back-retro-comics-bubble-boom-bang-f-2F01CP7.jpg');
+}
+
+
+.security-box { 
+  background-image: url('https://previews.123rf.com/images/bomg/bomg1603/bomg160300184/54301171-people-in-retro-style-pop-art-and-vintage-advertising-two-friends.jpg');
+}
+
+
+.tips-box {
+  background-image: url('https://previews.123rf.com/images/studiostoks/studiostoks1601/studiostoks160100032/50878493-financial-security-man-money-keyhole-pop-art-retro-style-electronic-payments-and-banks-vulnerability.jpg');
+
+}
+
+.customer-support {
+  background-image: url('https://cdn2.vectorstock.com/i/1000x1000/67/66/pop-art-woman-operator-consulting-client-vector-10766766.jpg');
+}
+
+
+#box {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
-  color: white;
   justify-content: center;
   align-items: center;
   border: solid;
   width: 30rem;
+  height: 18rem;
 }
 
-.cashback-box {
-  background-image: url('https://media.istockphoto.com/id/1165375652/vector/time-and-money-time-is-money.jpg?s=612x612&w=0&k=20&c=jUbY9jz3hdjnqE7cq0-5E5AE9GNgJIwoPrHo4fcI1EM=');
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid;
-  width: 20rem;
-  height: 20rem;
-  flex-grow: 1;
-}
-
-#box {
-  background-position: center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+#box h2 {
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 600;
 }
 
 #box:hover {
   transform: scale(1.1);
   transition: ease-in 0.1s;
+  cursor: pointer;
 }
 
-.cashback-box, .rebate-box, .interest-box {
-  width: 30%;
-  height: 40%;
-}
 
 #landing-page {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
+
 
 .send-container {
   display:flex;
@@ -186,4 +245,118 @@ th {
 .send-heading {
   padding-top: 1rem;
   text-align: center;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-wrap: wrap;
+  background-color: #0000004f;
+}
+
+#interest-div,
+#rebate-div,
+#cashback-div,
+#security-div,
+#customer-support {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30rem;
+  border: solid;
+  color: rgb(0, 0, 0);
+  height: 20rem;
+  flex-direction: column;
+  text-align: center;
+}
+
+#interest-div {
+  background-image: url('https://i.pinimg.com/736x/e8/34/74/e8347403cc7afaee48c1f194db20555e.jpg');
+}
+
+#cashback-div {
+  background-image: url('https://thumbs.dreamstime.com/z/pop-art-female-hands-swiping-credit-card-bank-terminal-payment-pos-store-pop-art-female-hands-swiping-credit-card-110693012.jpg');
+}
+
+#rebate-div {
+  background-image: url('https://img.freepik.com/premium-vector/pop-art-businessman-hands-holding-wallet-with-money_87771-1341.jpg');
+}
+
+#security-div {
+  background-image: url('https://thumbs.dreamstime.com/b/brutal-security-guard-fight-pop-art-retro-style-bruise-wound-plaster-injury-powerful-muscular-bodybuilder-sport-62836491.jpg');
+}
+
+#customer-support {
+  background-image: url('https://st3.depositphotos.com/29384342/34030/i/1600/depositphotos_340304874-stock-illustration-pop-art-woman-plumber-mechanic.jpg');
+}
+
+
+#interest-div::before,
+#rebate-div::before,
+#cashback-div::before,
+#security-div::before,
+#customer-support::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.473) 100%, rgba(0,0,0,0.8) 100%);
+  z-index: 0;
+}
+
+
+.img-box {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img-box h1 {
+  color: white;
+  z-index: 1;
+}
+
+.img-box h2 {
+  color: white;
+  z-index: 1;
+}
+
+.img-box p {
+  color: white;
+  z-index: 1;
+}
+
+
+.tips-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.tips-box h3 {
+  z-index: 1;
+  color: white;
+}
+
+
+#security-div,
+#customer-support {
+  flex-grow: .422;
+}
+
+
+#landing-section{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #0000004b;
+  text-align: center;
+  color: rgb(0, 0, 0);
 }
