@@ -20,7 +20,7 @@ function Dashboard() {
       denyButtonText: `No`
     }).then((result) => {
       if (result.isConfirmed) {
-        const updatedAccounts = allAccounts.filter(account => account.email !== accountToDelete);
+        const updatedAccounts = allAccounts.filter(account => account.email !== email);
         const updatedAccountsString = JSON.stringify(updatedAccounts);
         localStorage.setItem('allAccounts', updatedAccountsString);
         setAllAccounts(updatedAccounts);

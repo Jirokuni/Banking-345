@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Swal from 'sweetalert2';
 
 export const CreateAccountForm = (props) => {
   const [nameError, setNameError] = useState(false);
@@ -25,6 +26,13 @@ export const CreateAccountForm = (props) => {
   const createAccount = () => {
     if (!validateName(firstName) || !validateName(lastName)) {
       setNameError(true);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500
+      });
       return;
     }
 
@@ -53,6 +61,10 @@ export const CreateAccountForm = (props) => {
     localStorage.setItem("allAccounts", updatedAccountsString); // Store all accounts in a single array
     setAllAccounts(updatedAccounts);
     setCreatedAccount(accountData);
+    Swal.fire({
+      icon: "success",
+      title: "Account created successfully!",
+    });
     return accountData;
   };
 
