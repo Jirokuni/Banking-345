@@ -43,8 +43,10 @@ export const CreateAccountForm = (props) => {
             password,
             balance: initialBalance
         };
-        const updatedAccounts = [...allAccounts, accountData];
-        localStorage.setItem('allAccounts', JSON.stringify(updatedAccounts));
+
+        const updatedAccounts = [...allAccounts, accountData]; // Combine new account with existing accounts
+        const updatedAccountsString = JSON.stringify(updatedAccounts);
+        localStorage.setItem('allAccounts', updatedAccountsString); // Store all accounts in a single array
         setAllAccounts(updatedAccounts);
         setCreatedAccount(accountData);
         return accountData;
@@ -52,7 +54,8 @@ export const CreateAccountForm = (props) => {
 
     const deleteAccount = (email) => {
         const updatedAccounts = allAccounts.filter(account => account.email !== email);
-        localStorage.setItem('allAccounts', JSON.stringify(updatedAccounts));
+        const updatedAccountsString = JSON.stringify(updatedAccounts);
+        localStorage.setItem('allAccounts', updatedAccountsString);
         setAllAccounts(updatedAccounts);
         setCreatedAccount(null);
     }
@@ -62,6 +65,19 @@ export const CreateAccountForm = (props) => {
         setNameError(false);
         const account = createAccount();
         console.log(account);
+    }
+
+    const saveDefaultLogin = () => {
+        const defaultLogin = {
+            id: 'admin',
+            userName: 'admin',
+            firstName: 'Admin',
+            lastName: 'User',
+            email: 'admin@example.com',
+            password: 'admin123',
+            balance: 1000
+        };
+        localStorage.setItem('defaultLogin', JSON.stringify(defaultLogin));
     }
 
     return (
@@ -112,6 +128,7 @@ export const CreateAccountForm = (props) => {
                 ))}
             </div>
             <button onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+            {/* <button onClick={saveDefaultLogin}>Save Default Login</button> */}
         </div>
     );
 }
