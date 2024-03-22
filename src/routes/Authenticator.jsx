@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({children}) {
-    const isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+function ProtectedRoute({children, email}) {
+    const isAdmin = JSON.parse(localStorage.getItem('allAccounts')).find(user => user.email === email );
 
-    if (isLoggedIn) {
+    if (isAdmin) {
         return children
     } else {
         console.log('log in is false');
