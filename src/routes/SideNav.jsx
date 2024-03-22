@@ -15,13 +15,10 @@ export default function SideNav() {
               <Link to={`/app/dashboard`}>Dashboard</Link>
             </li>
             <li>
-              <Link to={`/app/send`}>Send</Link>
+              <Link to={`/app/send`}>Transfer</Link>
             </li>
             <li>
-              <Link to={`/app/withdraw`}>Withdraw or Deposit</Link>
-            </li>
-            <li>
-              <Link to={`/app/deposit`}>Deposit</Link>
+              <Link to={`/app/withdraw-deposit`}>Withdraw or Deposit</Link>
             </li>
             <li>
               <Link to={`/app/unique`}>Feature</Link>

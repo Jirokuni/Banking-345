@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 function Send() {
-    const local = JSON.parse(localStorage.getItem('users')) || [];
+    const local = JSON.parse(localStorage.getItem('allAccounts')) || [];
 
     const [sendID, setSendID] = useState('');
     const [receiveID, setReceiveID] = useState('');
-    const [showSend, setSend] = useState(false);
     const [balanceInput, setBalanceInput] = useState(0);
     const [retrievedUsers, setRetrievedUsers] = useState(local);
 
@@ -14,9 +13,6 @@ function Send() {
 //     console.log(retrievedUsers);
 // }, [retrievedUsers])
 
-  const send = () => {
-    setSend(!showSend);
-  }
   const sendIDInput = (e) => {
     setSendID(e.target.value);
   }
@@ -48,9 +44,8 @@ function Send() {
       });
 
       const userStringJSON = JSON.stringify(updatedUsers);
-      localStorage.setItem("users", userStringJSON);
+      localStorage.setItem("allAccounts", userStringJSON);
       setRetrievedUsers(updatedUsers);
-      setSend(false);
       setBalanceInput(0);
       setSendID("");
       setReceiveID("");
@@ -58,9 +53,12 @@ function Send() {
     }
   };
   return (
-      <div>
-      <button onClick={send}>Send</button>
-        {showSend ? (
+    <>
+    <h2 className="send-heading">
+      Select Account IDs to initiate transfer
+    </h2>
+      <div className="send-container">
+        { (
           <>
             <input
               type="text"
@@ -88,8 +86,9 @@ function Send() {
               Confirm
             </button>
           </>
-        ) : null}
+        ) }
       </div>
+      </>
   );
 }
 

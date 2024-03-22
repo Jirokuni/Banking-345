@@ -1,8 +1,11 @@
 import React, { useState } from "react"
+import NavBar from "./routes/NavBar"
+import { useNavigate } from "react-router"
 
 export const Login = (props) => {
     const [email,setEmail] = useState('')
     const [pass,setPass] = useState('')
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,9 +16,11 @@ export const Login = (props) => {
             alert("Login successful");
             // Perform actions after successful login
             // history.push('/main'); // Redirect to main.jsx after successful login
+            navigate('/app')
         } else {
             alert("Invalid email or password");
         }
+        
     }   
 
     const handleCreateAccount = () => {
@@ -23,6 +28,8 @@ export const Login = (props) => {
     }
 
     return(
+        <>
+        <NavBar />
         <div className="login">
         <form onSubmit={handleSubmit}>
             <label htmlFor="email">Email</label>
@@ -33,5 +40,6 @@ export const Login = (props) => {
         </form>
         <button onClick={handleCreateAccount}>Don't have an account? Register here.</button>
         </div>
+        </>
     )
 }

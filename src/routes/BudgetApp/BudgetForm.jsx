@@ -3,13 +3,13 @@ import { fetchData } from './helpers'
 import { Link, Outlet, useLoaderData } from 'react-router-dom'
 import './budget.css'
 export function budgetLoader() {
-    const userName = fetchData("Lindsay Joseph")
+    const userName = fetchData("Lindsay Joseph") || "";
     return {userName}
 }
 
 function BudgetForm() {
-    const {userName} = useLoaderData();
-    const currentBudget = userName.balance;
+    const {userName} = useLoaderData()
+    const currentBudget = userName.balance || 0;
 
 
 
