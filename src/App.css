@@ -18,11 +18,11 @@ body, #root {
 
 #sidebar {
     position: absolute;
-    background-color: white;;
+    background-color: rgba(0, 0, 0, 0.445);;
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 30%;
+    width: 15rem;
     padding: 1rem;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease; 
@@ -38,14 +38,21 @@ body, #root {
     padding: 1rem;
 }
 
+.burger-menu-btn {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    padding: .5rem;
+    border-radius: 1rem;
+}
+
 .toggle-btn {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 2rem;
     position: absolute;
     z-index: 10;
     bottom: 1rem;
     left: 4.5rem;
-    border-radius: 50%;
+    border-radius: 1rem;
 }
 
 .toggle-btn.open {
@@ -176,6 +183,37 @@ body, #root {
     border-radius: 1rem;
     color: white;
     overflow-y: scroll;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem;
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    background-color: rgba(0, 0, 0, 0.822);
+    border-radius: 1rem;
+    border: solid;
+}
+
+.login-box h1 {
+    color: white;
+}
+
+.login-box input {
+    border-radius: 1rem;
+    width: 15rem;
+}
+
+.login-box button {
+    border-radius: 1rem;
 }
 
 ::-webkit-scrollbar {

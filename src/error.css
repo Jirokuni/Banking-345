@@ -20,3 +20,7 @@ i {
     justify-content: space-around;
     align-items: center;
 }
+
+.return-btn p{
+    color: rgb(0, 225, 255);
+  }
