@@ -15,7 +15,7 @@ const Home = () => {
               <h2>High Interest Rates!</h2>
             </div>
             <div id="box" className="rebate-box">
-              <h2>No Annual Feeds on Our Card!</h2>
+              <h2>No Annual Fees on Our Card!</h2>
             </div>
             <div id="box" className="cashback-box">
               <h2>Cashbacks!</h2>

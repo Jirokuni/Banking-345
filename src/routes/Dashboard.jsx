@@ -36,7 +36,8 @@ function Dashboard() {
 
   return (
     <>
-        <div><strong>All Users</strong></div>
+    <div className='dash-box'>
+        <div id='head-users'><strong>All Users</strong>
         <table>
           <thead>
             <tr>
@@ -63,6 +64,8 @@ function Dashboard() {
             ))}
           </tbody>
         </table>
+        </div>
+        </div>
     </>
     )}
 
