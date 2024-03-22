@@ -16,7 +16,7 @@ function Dashboard() {
       title: "Are you sure?",
       showDenyButton: true,
       showCancelButton: true,
-      confirmButtonText: "Yes",
+      confirmButtonText: "Delete",
       denyButtonText: `No`
     }).then((result) => {
       if (result.isConfirmed) {
