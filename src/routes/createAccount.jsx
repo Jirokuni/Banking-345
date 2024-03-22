@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Swal from 'sweetalert2';
 
 export const CreateAccountForm = (props) => {
     const [nameError, setNameError] = useState(false);
@@ -60,6 +61,16 @@ export const CreateAccountForm = (props) => {
         setCreatedAccount(null);
     }
 
+    const handleClick = () => {
+        Swal.fire({
+            position: "top",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setNameError(false);
@@ -100,10 +111,10 @@ export const CreateAccountForm = (props) => {
                     <label className="label" htmlFor="initialBalance">Initial Balance</label>
                     <input className="input" type="number" value={initialBalance} onChange={(e) => setInitialBalance(e.target.value)} placeholder="0.00 PHP" id="initialBalance" required/>
                     {initialBalance < 0 && <p className="error">Initial balance cannot be less than 0</p>}
-                    <button className="button" type="submit">Create Account</button>
+                    <button onClick={handleClick} className="button" type="submit">Create Account</button>
                 </form>
             </div>
-            {createdAccount && (
+            {/* {createdAccount && (
                 <div className="latestHistory">
                     <h2>Latest Account:</h2>
                     <p>ID: {createdAccount.id}</p>
@@ -126,11 +137,13 @@ export const CreateAccountForm = (props) => {
                         <button onClick={() => deleteAccount(account.email)}>Delete Account</button>
                     </div>
                 ))}
-            </div>
-            <button onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+            </div> */}
+            {/* <button onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button> */}
             {/* <button onClick={saveDefaultLogin}>Save Default Login</button> */}
         </div>
     );
 }
 
 export default CreateAccountForm;
+
+
