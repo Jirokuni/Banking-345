@@ -10,7 +10,7 @@ export const CreateAccountForm = (props) => {
   const [initialBalance, setInitialBalance] = useState(0);
   const [createdAccount, setCreatedAccount] = useState(null);
   const [allAccounts, setAllAccounts] = useState([]);
-  const [isAdmin, setIsAdmin] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const accounts = JSON.parse(localStorage.getItem("allAccounts")) || [];
@@ -88,8 +88,7 @@ export const CreateAccountForm = (props) => {
   };
 
   return (
-    <div>
-      <h1>Create here!</h1>
+    <div className="form-box">
       <div className="form">
         <form className="createAccountForm" onSubmit={handleSubmit}>
           <label className="label" htmlFor="userName">
@@ -177,50 +176,21 @@ export const CreateAccountForm = (props) => {
             <p className="error">Initial balance cannot be less than 0</p>
           )}
           <div className="admin-input-container">
-            <label for="admin-checkbox" className="admin-label">Admin Account?</label>
-            <input id="admin-checkbox" type="checkbox" onChange={e => setIsAdmin(e.target.checked)}/>
+            <label for="admin-checkbox" className="admin-label">
+              Admin Account?
+            </label>
+            <input
+              id="admin-checkbox"
+              type="checkbox"
+              onChange={(e) => setIsAdmin(e.target.checked)}
+            />
           </div>
-       
+
           <button className="button" type="submit">
             Create Account
           </button>
         </form>
       </div>
-      {createdAccount && (
-        <div className="latestHistory">
-          <h2>Latest Account:</h2>
-          <p>ID: {createdAccount.id}</p>
-          <p>Username: {createdAccount.userName}</p>
-          <p>
-            Name: {createdAccount.firstName} {createdAccount.lastName}
-          </p>
-          <p>Email: {createdAccount.email}</p>
-          <p>Initial Balance: {createdAccount.balance}</p>
-          <button onClick={() => deleteAccount(createdAccount.email)}>
-            Delete Account
-          </button>
-        </div>
-      )}
-      <div className="accountCreated">
-        <h2>All Accounts:</h2>
-        {allAccounts.map((account, index) => (
-          <div key={index}>
-            <p>ID: {account.id}</p>
-            <p>Username: {account.userName}</p>
-            <p>
-              Name: {account.firstName} {account.lastName}
-            </p>
-            <p>Email: {account.email}</p>
-            <p>Initial Balance: {account.balance}</p>
-            <button onClick={() => deleteAccount(account.email)}>
-              Delete Account
-            </button>
-          </div>
-        ))}
-      </div>
-      <button onClick={() => props.onFormSwitch("login")}>
-        Already have an account? Login here.
-      </button>
       {/* <button onClick={saveDefaultLogin}>Save Default Login</button> */}
     </div>
   );

@@ -14,18 +14,15 @@ import ErrorPage from './ErrorPage.jsx';
 import Dashboard from './routes/Dashboard.jsx';
 import Unique from './routes/Unique.jsx';
 import Home from './home.jsx';
-import CreateAccountForm from './routes/CreateAccount.jsx';
+import CreateAccountForm from './routes/createAccount.jsx';
 import { Login } from './login.jsx';
 import ProtectedRoute from './routes/Authenticator.jsx';
 import BudgetForm, { budgetLoader } from './routes/BudgetApp/BudgetForm.jsx';
 import BudgetBreakdown from './routes/BudgetApp/BudgetBreakdown.jsx';
 import RecentFunds from './routes/BudgetApp/RecentFunds.jsx';
 import FutureFunds from './routes/BudgetApp/DisplayAccounts.jsx';
-import DepositWithdraw from './Depwi.jsx';
-import FAQ from './routes/FAQ.jsx';
+import Account from './Depwi.jsx';
 
-
-const email =   localStorage.getItem('currentUser');
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,15 +34,11 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/FAQs",
-    element: <FAQ />
-  },
-  {
     path: "/app",
     element: 
-    <ProtectedRoute email={email} >
+    // <ProtectedRoute >
       <SideNav />,
-    </ProtectedRoute >,
+    /* </ProtectedRoute>, */
     children: [
       {
         path: "/app/send",
@@ -53,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/app/withdraw-deposit",
-        element: <DepositWithdraw/>,
+        element: <Account />,
       },
       {
         path: "/app/deposit",

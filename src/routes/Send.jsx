@@ -66,10 +66,11 @@ function Send() {
   };
   return (
     <>
-    <h2 className="send-heading">
-      Select Account IDs to initiate transfer
-    </h2>
+    <div className="send-box">
       <div className="send-container">
+      <h2 className="send-heading">
+      P2P Money Transfer
+    </h2>
         { (
           <>
             <input
@@ -99,6 +100,7 @@ function Send() {
             </button>
           </>
         ) }
+      </div>
       </div>
       </>
   );

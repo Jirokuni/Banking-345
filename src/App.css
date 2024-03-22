@@ -104,7 +104,7 @@ body, #root {
 }
 
 .label  {
-    color: #0d767d;
+    color: #ffffff;
     font-weight: bold;
     padding: 5px;
 }
@@ -130,3 +130,54 @@ body, #root {
     align-items: center;
 }
 
+
+.admin-input-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    gap: .5rem;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+    gap: 1rem;
+}
+
+.form {
+    background-color: rgba(0, 0, 0, 0.767);
+    width: 30rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+.form button {
+    border-radius: 1rem;
+}
+
+
+.dash-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#head-users {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    height: 35rem;
+    background-color: rgba(0, 0, 0, 0.651);
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    scrollbar-width: thin;
+}
