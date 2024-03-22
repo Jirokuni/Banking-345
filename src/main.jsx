@@ -25,6 +25,7 @@ import DepositWithdraw from './Depwi.jsx';
 import FAQ from './routes/FAQ.jsx';
 
 
+const email =   localStorage.getItem('currentUser');
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,9 +43,9 @@ const router = createBrowserRouter([
   {
     path: "/app",
     element: 
-    // <ProtectedRoute >
+    <ProtectedRoute email={email} >
       <SideNav />,
-    /* </ProtectedRoute>, */
+    </ProtectedRoute >,
     children: [
       {
         path: "/app/send",

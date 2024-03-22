@@ -3,8 +3,7 @@ import NavBar from "./routes/NavBar"
 import { useNavigate } from "react-router"
 
 export const Login = (props) => {
-
-
+    const allAccounts = JSON.parse(localStorage.getItem('allAccounts')) || [];
 
     const [email,setEmail] = useState('')
     const [pass,setPass] = useState('')
@@ -12,14 +11,16 @@ export const Login = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const allAccounts = JSON.parse(localStorage.getItem('allAccounts')) || [];
+ 
         const foundAccount = allAccounts.find(account => account.email === email && account.password === pass);
         const defaultLogin = JSON.parse(localStorage.getItem('defaultLogin'));
         if (foundAccount || (email === defaultLogin.email && pass === defaultLogin.password)) {
             alert("Login successful");
-            navigate('/app')
+            localStorage.setItem('isLoggedin', true);
+            localStorage.setItem('currentUser', email);
+            navigate('/app');
         } else {
-            alert("Invalid email or password");
+            alert("Account is not a Administrator");
         }
         
     }   
