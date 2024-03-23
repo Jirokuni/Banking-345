@@ -103,6 +103,7 @@ export const CreateAccountForm = (props) => {
     <div className="form-box">
       <div className="form">
         <form className="createAccountForm" onSubmit={handleSubmit}>
+        <h1>Account Creation</h1>
           <label className="label" htmlFor="userName">
             Username
           </label>
